@@ -1,5 +1,6 @@
 import { QUOTE_URL } from "./constants";
 import chunk from "lodash.chunk";
+
 export const getQuote = async () => {
   const response = await fetch(QUOTE_URL);
 
@@ -8,4 +9,5 @@ export const getQuote = async () => {
   return quote.replace(/\.\.\./g, " ");
 };
 
-export const prepareQuote = quote => chunk(quote.split(" "), 5);
+export const prepareQuote = quote =>
+  chunk(quote.split(" "), 5).map(chunk => chunk.join(" "));

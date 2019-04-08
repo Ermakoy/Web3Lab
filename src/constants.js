@@ -1,4 +1,4 @@
-export const COLLECTION = "https://source.unsplash.com/collection/1337228/";
+export const COLLECTION = `https://source.unsplash.com/collection/1337228/`;
 
 export const QUOTE_URL = "https://thesimpsonsquoteapi.glitch.me/quotes";
 

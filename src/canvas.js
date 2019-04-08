@@ -1,5 +1,4 @@
 import { WIDTH, HEIGHT } from "./constants";
-import { prepareQuote } from "./quote";
 
 export const initCanvas = () => {
   const canvas = document.createElement("canvas");
@@ -25,7 +24,7 @@ export const displayImages = (images, ctx, offsets) =>
   );
 
 export const displayQuote = (ctx, quote) =>
-  prepareQuote(quote).forEach((chunk, index, { length }) => {
+  quote.forEach((chunk, index, { length }) => {
     ctx.shadowColor = "black";
     ctx.shadowBlur = 7;
     ctx.lineWidth = 3;
@@ -36,6 +35,8 @@ export const displayQuote = (ctx, quote) =>
     ctx.fillText(chunk, 250, 250 + 40 * (index - length / 2));
   });
 
-export const setCanvasToLoading = ctx => ctx.fillText("Loading...", 250, 50);
+export const setCanvasToLoading = ctx => {
+  ctx.fillText("Loading...", 250, 50);
+};
 
 export const clearCanvas = ctx => ctx.clearRect(0, 0, 500, 500);
